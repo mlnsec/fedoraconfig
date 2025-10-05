@@ -15,6 +15,7 @@ mpv
 network-manager-applet
 nextcloud-client
 pavucontrol
+ranger
 ripgrep
 rsync
 shotwell
