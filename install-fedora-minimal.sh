@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Quickly configure Fedora 42 with Niri WM
+# Quickly configure a minimal Fedora 42 with Sway
 # Get Everything iso and install with only "Custom" selected
 
 # Ensure script is run as root
@@ -28,7 +28,7 @@ dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 # Intel acceleration
 # dnf install -y intel-media-driver
 
-echo -e "\e[32;1mEnabling SDDM and Plymouth\e[m\n"
+echo -e "\e[32;1mEnabling greetd and Plymouth\e[m\n"
 dnf install -y tuigreet plymouth-system-theme
 systemctl enable greetd
 systemctl set-default graphical.target
@@ -46,7 +46,7 @@ dnf install -y $(< ./swaypackages.txt)
 # sudo dnf up
 # sudo dnf install -y spotify-client
 
-# Remove localsearch package
+# Remove localsearch package if installed
 echo "--------------------------------------------------------"
 echo "Installation complete!"
 echo "Please take the following steps to finalize your setup:"
